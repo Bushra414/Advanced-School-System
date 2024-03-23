@@ -1,0 +1,171 @@
+/* Fonts */
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("fonts/Poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("fonts/Poppins/Poppins-SemiBold.ttf");
+}
+
+/* Body Styles */
+body {
+  font-family: Poppins-Regular, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  background-color: #ffffff;
+  background-image: radial-gradient(#00000058 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+}
+body.form {
+  font-family: Poppins-Regular, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.371) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+  transition: width 0.5s;
+}
+
+.sidebar.collapsed {
+  width: 50px;
+}
+
+/* Tab Styles */
+.tab {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+/* Adjusted padding for tabs */
+.tab {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+.tab-content{
+  width: 100%;
+}
+
+/* Added space between icon and text */
+.tab i {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.tab.active {
+  background-color: #555;
+}
+
+/* Content Styles */
+.content {
+  margin-left: 200px;
+  padding: 20px;
+  transition: margin-left 0.5s;
+}
+
+.content.collapsed {
+  margin-left: 50px;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Toggle Button Styles */
+.toggle-btn {
+  top: 10px;
+  right: 5px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 30px;
+  margin: 0 7px 7px 0;
+}
+.tab-text{
+  font-size: 16px;
+}
+/* Collapsed Tab Text */
+.tab.collapsed .tab-text {
+  display: none;
+}
+
+.signup-form {
+  border: solid;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+a{
+  color: white !important;
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+th:first-child {
+  border-top-left-radius: 10px;
+}
+
+th:last-child {
+  border-top-right-radius: 10px;
+}
+
+td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+  border-bottom-right-radius: 10px;
+}
