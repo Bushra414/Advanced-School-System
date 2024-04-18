@@ -1,0 +1,177 @@
+ Project Documentation
+
+ Table of Contents
+
+1.  Conceptualization conceptualization
+2.  Database Analysis database-analysis
+3.  Database Development database-development
+4.  Database Schema database-schema
+5.  Execution Steps execution-steps
+6.  Models models
+7.  Controllers controllers
+8.  Routes routes
+
+---
+
+ 1. Conceptualization <a name="conceptualization"></a>
+
+The initial phase involves brainstorming and conceptualizing an idea for the  Project. The proposed project idea should embody the principles of CRUD (Create, Read, Update, Delete) and must be accompanied by a functional design.
+
+ 2. Database Analysis
+
+Following the selection of a viable project idea, a comprehensive analysis is conducted to determine the necessary requirements for the database. This phase involves understanding the structure and functionalities that the database should encompass.
+
+ 3. Database Development <a name="database-development"></a>
+
+The database is then constructed to meet the identified requirements. Under the project name "School System," the following tables are created:
+
+- Classes
+- Marks
+- Students
+- Subjects
+- Teachers
+
+ 4. Database Schema 
+
+The schema for each table is defined as follows:
+
+1. Classes:
+   - Stores information pertaining to different classes within the school.
+     - Class ID (CID)
+     - Class Name (class_name)
+     - Creation Timestamp (created_at)
+     - Last Updated Timestamp (updated_at)
+
+2. Marks:
+   - Records student marks for various subjects.
+     - Mark ID (MID)
+     - Student ID (SID)
+     - Subject ID (SubID)
+     - Marks Obtained
+     - Creation Timestamp (created_at)
+     - Last Updated Timestamp (updated_at)
+
+3. Students:
+   - Houses details of enrolled students.
+     - Student ID (SID)
+     - Full Name (fullname)
+     - Date of Birth (date_of_birth)
+     - Gender
+     - Phone Number
+     - Father's Name
+     - Mother's Name
+     - Parent's Phone Number
+     - Associated Class
+     - Creation Timestamp (created_at)
+     - Last Updated Timestamp (updated_at)
+
+4. Subjects:
+   - Contains information on subjects taught.
+     - Subject ID (SubID)
+     - Subject Name (subject_name)
+     - Associated Class ID (CID)
+     - Creation Timestamp (created_at)
+     - Last Updated Timestamp (updated_at)
+
+5. Teachers:
+   - Stores details of teaching staff.
+     - Teacher ID (TID)
+     - Full Name (full_name)
+     - Date of Birth (date_of_birth)
+     - Phone Number
+     - Email Address
+     - Associated Class
+     - Creation Timestamp (created_at)
+     - Last Updated Timestamp (updated_at)
+
+ 5. Execution Steps 
+
+1. Creating Web Pages:
+   - Develop web pages using HTML and CSS or a CSS framework in the blade.php format.
+   - Web pages include:
+     - Sign up page for students
+     - Sign in page for students
+     - Sign in page for teachers
+     - Dashboard for teachers and students
+
+2. Modals:
+   - Implement modals for:
+     - Adding marks
+     - Updating marks
+
+ 6. Models 
+
+Models serve as the intermediary between the application's data and the database. They encapsulate the business logic and provide an interface for interacting with the database tables. Here are the models used in the  Project:
+
+ Student Model
+
+php
+class Student extends Model {
+   protected $table = 'students';
+   protected $primaryKey = 'SID';
+   protected $fillable =  'fullname', 'date_of_birth', 'gender', 'phone_number', 'father_name', 'mother_name', 'parents_phone_number', 'class'];
+}
+
+
+(Continue with other model definitions)
+
+ 7. Controllers 
+Controllers handle the incoming HTTP requests, process the data, and return the appropriate responses. They serve as the bridge between the models and the views. Here are the controllers used in the  Project along with their functions:
+
+ Teacher Controller
+
+ Function: create(Request $request)
+
+- Validates incoming request data and creates a new teacher record.
+- Redirects users to the teacher sign-up page with appropriate messages.
+
+ Function: signIn(Request $request)
+
+- Manages the sign-in process for teachers by validating provided email and phone number.
+- Retrieves teacher record from the database based on provided credentials.
+- Stores teacher's ID in the session upon successful authentication and redirects to the teacher dashboard; otherwise, redirects with an error message.
+
+ Function: showDashboard()
+
+- Displays the authenticated teacher's dashboard by fetching necessary data from the database.
+- Retrieves teacher details, associated class, students, and subjects related to the class.
+- Renders the teacher dashboard view with retrieved data.
+
+(Continue with the functions of other controllers as per the original provided text)
+
+ 8. Routes
+
+Routes define URL endpoints and their corresponding actions or handlers within the web application framework. Here are the functions of routes used in the  Project:
+
+1. Teacher Views:
+   - /teacher-dashboard: Shows the teacher dashboard.
+   - /teacher-create: Creates a new teacher.
+   - /teacher-sign-in: Handles teacher sign-in.
+   - /teacher-add-subject: Adds a subject for a teacher.
+   - /teacher-add-class: Adds a class for a teacher.
+   - /teacher-logout: Logs out the teacher.
+
+2. Student Views:
+   - /student-create: Creates a new student.
+   - /student-login: Handles student login.
+   - /student-dashboard: Shows the student dashboard.
+
+3. Teacher Controller Routes:
+   - These routes are associated with actions performed by the teachersController.
+   - /teacher-dashboard: Shows the teacher dashboard.
+   - /teacher-create: Creates a new teacher.
+   - /teacher-sign-in: Handles teacher sign-in.
+   - /teacher-add-subject: Adds a subject for a teacher.
+   - /teacher-add-class: Adds a class for a teacher.
+   - /teacher-logout: Logs out the teacher.
+
+4. Student Controller Routes:
+   - These routes are associated with actions performed by the studentController.
+   - /student-create: Creates a new student.
+   - /student-login: Handles student login.
+   - /student-dashboard: Shows the student dashboard.
+
+5. Results Controller Routes:
+   - These routes are associated with actions performed by the resultController.
+   - /add-marks: Adds marks for a student.
+   - /update-marks: Updates marks for a student.
