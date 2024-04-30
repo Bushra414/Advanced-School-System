@@ -61,7 +61,7 @@ public function signIn(Request $request)
         return redirect()->route('teacher-dashboard');
     } else {
         // Redirecting back to sign-in page with an error message
-        return redirect()->route('teacher-sign-in')->with('error', 'Failed to sign in teacher');
+        return redirect()->route('teacher-sign-in-form')->with('error', 'Failed to sign in teacher');
     }
 }
 

@@ -37,10 +37,13 @@ Route::view('/student-sign-in', 'forms.student-sign-in')->name('student-sign-in'
 // Teacher controller
 Route::get('/teacher-dashboard', [teachersController::class, 'showDashboard'])->name('teacher-dashboard')->middleware('teacher.auth');
 Route::post('/teacher-create', [teachersController::class, 'create'])->name('teacher-create');
-Route::post('/teacher-sign-in', [teachersController::class, 'signIn'])->name('teacher-sign-in');
 Route::post('/teacher-add-subject', [teachersController::class, 'addSubject'])->name('teacher-add-subject');
 Route::post('/teacher-add-class', [teachersController::class, 'addClass'])->name('teacher-add-class');
 Route::post('/teacher-logout', [teachersController::class, 'logout'])->name('teacher-logout');
+
+
+Route::post('/teacher-sign-in', [teachersController::class, 'signIn'])->name('teacher-sign-in');
+
 
 
 
@@ -64,7 +67,3 @@ Route::get('/admin-dashboard', function () {
     $students = App\Models\Student::all();
     return view('dashboards.admin-dash', ['students' => $students]);
 })->name('admin-dashboard');
-
-
-
-
